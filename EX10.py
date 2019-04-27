@@ -6,3 +6,7 @@ print(ujtomb)
 
 ujtombbin=[]
 ujtombdec=[]
+
+for szam in ujtomb:
+    decszam = 0
+    seged = 1
