@@ -17,3 +17,8 @@ for szam in ujtomb:
 
     if decszam%3==0 and decszam!=0:
         ujtombbin.append(szam)
+        ujtombdec.append(decszam)
+
+print()
+print(ujtombbin)
+print(ujtombdec)
