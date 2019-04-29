@@ -13,3 +13,7 @@ for szam in ujtomb:
     for j in range(len(szam) - 1, -1, -1):
         if int(szam[j]) == 1:
             decszam += seged
+        seged = seged * 2
+
+    if decszam%3==0 and decszam!=0:
+        ujtombbin.append(szam)
