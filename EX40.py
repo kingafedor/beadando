@@ -1,4 +1,5 @@
 import numpy.random as np
 
-tomb=[]
-szamlalo=0
+def determ():
+    tomb=[]
+    szamlalo=0
