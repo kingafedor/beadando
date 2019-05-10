@@ -14,3 +14,8 @@ def determ():
             tomb = [[a, b], [c, d]]
             for i in tomb:
                 print(i)
+            print("Determináns: ",a*d-b*c)
+            print()
+        else:
+            continue
+determ()
