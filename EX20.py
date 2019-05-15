@@ -1,3 +1,4 @@
+import re
 def leghosszabbpalindromresz(st):
     n = len(st)
     table = [[0 for x in range(n)] for y
@@ -37,7 +38,9 @@ def leghosszabbpalindromresz(st):
 try:
     st=input("A feladat kiírja a kapott string leghosszabb rész-palindromját: ")
     print()
-    #st = "forgeeksskeegfor"
+    #st = "Indul a görög aludni"
+    st=st.lower()
+    st=re.sub("[ ]","",st)
     leghosszabbpalindromresz(st)
 except TypeError:
     print("Adjon meg érvényes stringet!")
