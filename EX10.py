@@ -1,4 +1,13 @@
 tombregi=input("Adjon meg bináris számokat (max 5 jegyű) ;-vel elválasztva: ")
+karakterek=["0","1",";"]
+
+for betu in tombregi:
+    if betu not in karakterek:
+        print("Adjon meg helyes értéket!")
+        tombregi = input("Adjon meg bináris számokat (max 5 jegyű) ;-vel elválasztva: ")
+    else:
+        continue
+
 ujtomb=tombregi.split(";")
 
 print(tombregi)
