@@ -1,15 +1,8 @@
-import sys
-
-def printSubStr(st, low, high):
-    sys.stdout.write(st[low: high + 1])
-    sys.stdout.flush()
-    return ''
-
-def longestPalSubstr(st):
+def leghosszabbpalindromresz(st):
     n = len(st)
     table = [[0 for x in range(n)] for y
              in range(n)]
-    maxLength = 1
+    maxhossz = 1
     i = 0
     while (i < n):
         table[i][i] = True
@@ -21,7 +14,7 @@ def longestPalSubstr(st):
         if (st[i] == st[i + 1]):
             table[i][i + 1] = True
             start = i
-            maxLength = 2
+            maxhossz = 2
         i = i + 1
 
     k = 3
@@ -30,23 +23,21 @@ def longestPalSubstr(st):
         while i < (n - k + 1):
             j = i + k - 1
 
-            if (table[i + 1][j - 1] and
-                    st[i] == st[j]):
+            if (table[i + 1][j - 1]==True and st[i] == st[j]):
                 table[i][j] = True
 
-                if (k > maxLength):
+                if (k > maxhossz):
                     start = i
-                    maxLength = k
+                    maxhossz = k
             i = i + 1
         k = k + 1
-    print
-    "Longest palindrome substring is: ", printSubStr(st, start,
-                                                     start + maxLength - 1)
-
-    return maxLength
+    print("A leghosszabb rész-palindrom: ", st[start:start + maxhossz])
 
 
-st = "forgeeksskeegfor"
-l = longestPalSubstr(st)
-print
-"Length is:", l
+try:
+    st=input("A feladat kiírja a kapott string leghosszabb rész-palindromját: ")
+    print()
+    #st = "forgeeksskeegfor"
+    leghosszabbpalindromresz(st)
+except TypeError:
+    print("Adjon meg érvényes stringet!")
